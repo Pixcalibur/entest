@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\VaccineShipment;
+use App\Models\VaccineType;
+use Database\Factories\VaccineShipmentFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        VaccineType::factory()->count(3)->create();
+        VaccineShipment::factory()->count(10)->create();
     }
 }
