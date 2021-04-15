@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::put('/volunteer', [\App\Http\Controllers\HomeController::class, 'volunteer'])->name('volunteer');
+
 require __DIR__ . '/admin.php';
 require __DIR__.'/auth.php';
