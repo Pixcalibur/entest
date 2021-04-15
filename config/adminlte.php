@@ -247,6 +247,11 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'volunteers',
+            'url'  => 'admin/volunteer',
+            'active' => ['admin/volunteer/*']
+        ],
     ],
 
     /*

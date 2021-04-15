@@ -19,6 +19,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         return view('admin.dashboard');
     })->middleware(['auth'])->name('dashboard');
 
+    /** VACCINE TYPE */
+
     Route::prefix('vaccine-type')->group(function () {
 
         Route::get('/', [
@@ -53,6 +55,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         ])->name('vaccine-type.delete')->where('id', '[0-9]+');
     });
 
+    /** VACCINE SHIPMENT */
+
     Route::prefix('vaccine-shipment')->group(function () {
 
         Route::get('/', [
@@ -85,6 +89,41 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
             \App\Http\Controllers\Admin\VaccineShipmentController::class,
             'delete'
         ])->name('vaccine-shipment.delete')->where('id', '[0-9]+');
+    });
 
+    /** VOLUNTEER */
+
+    Route::prefix('volunteer')->group(function () {
+
+        Route::get('/', [
+            \App\Http\Controllers\Admin\VolunteerController::class,
+            'index'
+        ])->name('volunteer.list');
+
+        Route::get('/create', [
+            \App\Http\Controllers\Admin\VolunteerController::class,
+            'create'
+        ])->name('volunteer.create');
+
+        Route::put('/store', [
+            \App\Http\Controllers\Admin\VolunteerController::class,
+            'store'
+        ])->name('volunteer.store');
+
+        Route::get('/edit/{id}', [
+            \App\Http\Controllers\Admin\VolunteerController::class,
+            'edit'
+        ])->name('volunteer.edit')->where('id', '[0-9]+');
+
+        Route::patch('/update/{id}', [
+            \App\Http\Controllers\Admin\VolunteerController::class,
+            'update'
+        ])->name('volunteer.update')->where('id', '[0-9]+');
+
+        //Route::delete('/delete/{id}', [
+        Route::get('/delete/{id}', [
+            \App\Http\Controllers\Admin\VolunteerController::class,
+            'delete'
+        ])->name('volunteer.delete')->where('id', '[0-9]+');
     });
 });
