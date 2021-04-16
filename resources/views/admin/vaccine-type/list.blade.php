@@ -27,15 +27,13 @@
     <table class="table" id="list-table">
         <thead>
             <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>actions</th>
+                <th>{{ __('form.vaccine-type.field.name') }}</th>
+                <th>{{ __('form.generic.actions') }}</th>
             </tr>
         </thead>
         <tbody>
             @foreach($vaccineTypes as $vaccineType)
                 <tr>
-                    <td>{{ $vaccineType->id }}</td>
                     <td>{{ $vaccineType->name }}</td>
                     <td>
                         @if(null === $vaccineType->deleted_at)

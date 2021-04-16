@@ -21,7 +21,7 @@
                     <form role="form" method="POST" action="{{ route('volunteer.update', ['id' => $model->id]) }}" autocomplete="off">
                         @method('PATCH')
                         @csrf
-
+                        <input type="hidden" name="id" value="{{ $model->id }}">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="vaccine_type_id">{{ __('form.volunteer.field.type') }}</label>

@@ -27,17 +27,15 @@
     <table class="table" id="list-table">
         <thead>
             <tr>
-                <th>id</th>
-                <th>type</th>
-                <th>amount</th>
-                <th>arrival</th>
-                <th>actions</th>
+                <th>{{ __('form.vaccine-shipment.field.type') }}</th>
+                <th>{{ __('form.vaccine-shipment.field.amount') }}</th>
+                <th>{{ __('form.vaccine-shipment.field.arrival_date') }}</th>
+                <th>{{ __('form.generic.actions') }}</th>
             </tr>
         </thead>
         <tbody>
             @foreach($vaccineShipments as $vaccineShipment)
                 <tr>
-                    <td>{{ $vaccineShipment->id }}</td>
                     <td>{{ $vaccineShipment->type->name }}</td>
                     <td>{{ $vaccineShipment->amount }}</td>
                     <td>{{ $vaccineShipment->arrival_date }}</td>
