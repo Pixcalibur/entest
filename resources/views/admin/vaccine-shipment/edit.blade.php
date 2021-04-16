@@ -35,6 +35,9 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @error('vaccine_type_id')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="card-body">
                             <div class="form-group">
@@ -43,6 +46,9 @@
                                        placeholder="{{ __('form.vaccine-shipment.placeholder.amount') }}"
                                        value="{{ old('amount', $model->amount) }}">
                             </div>
+                            @error('amount')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="card-body">
                             <div class="form-group">
@@ -51,21 +57,15 @@
                                        placeholder="{{ __('form.vaccine-shipment.placeholder.arrival_date') }}"
                                        value="{{ old('arrival_date', $model->arrival_date) }}">
                             </div>
+                            @error('arrival_date')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="card-footer text-right">
                             <a class="btn btn-danger" href="{{ route('vaccine-shipment.list') }}">{{ __('form.generic.cancel') }}</a>
                             <button type="submit" class="btn btn-success">{{ __('form.generic.submit') }}</button>
                         </div>
                     </form>
-                    @error('vaccine_type_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                    @error('amount')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                    @error('arrival_date')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
                 </div>
             </div>
         </div>

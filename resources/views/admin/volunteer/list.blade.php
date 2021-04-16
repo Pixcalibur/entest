@@ -30,18 +30,16 @@
                 <table class="table" id="list-table">
                     <thead>
                     <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>vaccine type</th>
-                        <th>preferred date</th>
-                        <th>actions</th>
+                        <th>{{ __('form.volunteer.field.name') }}</th>
+                        <th>{{ __('form.volunteer.field.email') }}</th>
+                        <th>{{ __('form.volunteer.field.type') }}</th>
+                        <th>{{ __('form.volunteer.field.preferred_date') }}</th>
+                        <th>{{ __('form.generic.actions') }}</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($volunteers as $volunteer)
                         <tr>
-                            <td>{{ $volunteer->id }}</td>
                             <td>{{ $volunteer->name }}</td>
                             <td>{{ $volunteer->email }}</td>
                             <td>{{ $volunteer->vaccine->name }}</td>

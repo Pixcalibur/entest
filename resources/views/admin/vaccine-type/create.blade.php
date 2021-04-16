@@ -26,15 +26,15 @@
                                 <label for="name">{{ __('form.vaccine-type.field.name') }}</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="{{ __('form.vaccine-type.placeholder.name') }}">
                             </div>
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="card-footer text-right">
                             <a class="btn btn-danger" href="{{ route('vaccine-type.list') }}">{{ __('form.generic.cancel') }}</a>
                             <button type="submit" class="btn btn-success">{{ __('form.generic.submit') }}</button>
                         </div>
                     </form>
-                    @error('name')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
                 </div>
             </div>
         </div>

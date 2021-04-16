@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
+    Route::get('/', function () {
+        return redirect('admin/dashboard');
+    })->name('admin');
+
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
-    })->middleware(['auth'])->name('dashboard');
+    })->name('dashboard');
 
     /** VACCINE TYPE */
 

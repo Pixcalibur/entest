@@ -15,9 +15,13 @@ class HomeController extends Controller
     public function index()
     {
         $total = Redis::get('vaccine_total', 0);
-        $vaccineTypes = VaccineType::all();
+        return view('welcome', compact('total'));
+    }
 
-        return view('welcome', compact('total', 'vaccineTypes'));
+    public function register()
+    {
+        $vaccineTypes = VaccineType::all();
+        return view('register', compact('vaccineTypes'));
     }
 
     public function volunteer(CreateRequest $request)

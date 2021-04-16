@@ -232,23 +232,23 @@ return [
             'label_color' => 'success',
         ],*/
         [
-            'text'    => 'vaccine',
+            'text'    => 'Vakcina',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'shipments',
+                    'text' => 'Szállítmányok',
                     'url'  => 'admin/vaccine-shipment',
                     'active' => ['admin/vaccine-shipment/*']
                 ],
                 [
-                    'text' => 'types',
+                    'text' => 'Típusok',
                     'url'  => 'admin/vaccine-type',
                     'active' => ['admin/vaccine-type/*']
                 ],
             ],
         ],
         [
-            'text' => 'volunteers',
+            'text' => 'Jelentkezők',
             'url'  => 'admin/volunteer',
             'active' => ['admin/volunteer/*']
         ],

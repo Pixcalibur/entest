@@ -5,6 +5,7 @@ namespace App\Http\Requests\Volunteer;
 
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 /**
  * Class UpdateRequest
@@ -24,10 +25,15 @@ class UpdateRequest extends FormRequest
      */
     public function rules() : array
     {
+
         return [
             'vaccine_type_id' => 'required|exists:vaccine_types,id',
             'name' => 'required|string',
-            'email' => 'required|email|unique:volunteers',
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('volunteers')->ignore($this->get('id'))
+            ],
             'preferred_date' => 'required|date',
         ];
     }

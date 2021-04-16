@@ -32,33 +32,33 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @error('vaccine_type_id')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="amount">{{ __('form.vaccine-shipment.field.amount') }}</label>
                                 <input type="number" class="form-control" id="amount" name="amount" placeholder="{{ __('form.vaccine-shipment.placeholder.amount') }}">
                             </div>
+                            @error('amount')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="arrival_date">{{ __('form.vaccine-shipment.field.arrival_date') }}</label>
                                 <input type="text" class="single-date-picker form-control" id="arrival_date" name="arrival_date" placeholder="{{ __('form.vaccine-shipment.placeholder.arrival_date') }}">
                             </div>
+                            @error('arrival_date')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="card-footer text-right">
                             <a class="btn btn-danger" href="{{ route('vaccine-shipment.list') }}">{{ __('form.generic.cancel') }}</a>
                             <button type="submit" class="btn btn-success">{{ __('form.generic.submit') }}</button>
                         </div>
                     </form>
-                    @error('vaccine_type_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                    @error('amount')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                    @error('arrival_date')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
                 </div>
             </div>
         </div>

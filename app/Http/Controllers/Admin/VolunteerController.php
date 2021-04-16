@@ -77,7 +77,7 @@ class VolunteerController extends Controller
     {
         try {
 
-            $fields = $request->except(['_method', '_token']);
+            $fields = $request->except(['_method', '_token', 'id']);
 
             /** @var Volunteer $model */
             $model = Volunteer::where('id', $id)->firstOrFail();
